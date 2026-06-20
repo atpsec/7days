@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>90 Günlük DevSecOps ve CI/CD Güvenliği Yol Haritası</title>
+  <meta name="description" content="DevSecOps, GitHub Actions Security, SAST/DAST, Bandit, SARIF ve güvenlik raporlama odaklı 90 günlük uygulamalı eğitim yol haritası." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">İçeriğe geç</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Ana menü">
+      <a class="brand" href="#top">
+        <span class="brand-mark">DS</span>
+        <span>DevSecOps Roadmap</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menüyü aç/kapat">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#skills">Beceriler</a>
+        <a href="#week-one">7 Gün</a>
+        <a href="#roadmap">90 Gün</a>
+        <a href="#projects">Projeler</a>
+        <a href="#templates">Şablonlar</a>
+        <a href="#exam">Mini Sınavlar</a>
+      </div>
+    </nav>
+
+    <section id="top" class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">Etik • Yasal • Savunma odaklı • Uygulamalı</p>
+        <h1>90 Günlük DevSecOps ve CI/CD Güvenliği Öğrenme Sistemi</h1>
+        <p class="hero-text">
+          GitHub Actions Security, CI/CD güvenliği, SAST (Statik Uygulama Güvenlik Testi),
+          DAST (Dinamik Uygulama Güvenlik Testi), Bandit, SARIF, dependency scanning
+          (bağımlılık taraması), secret scanning (gizli bilgi taraması), container security
+          (konteyner güvenliği) ve güvenlik raporlamasını uygulamalı öğrenmek için tasarlanmış
+          portföy odaklı yol haritası.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#week-one">7 günlük başlangıca git</a>
+          <a class="button secondary" href="#roadmap">90 günlük plana git</a>
+        </div>
+      </div>
+      <aside class="hero-panel" aria-label="Öğrenme döngüsü">
+        <h2>Öğrenme Döngüsü</h2>
+        <ol class="cycle-list">
+          <li>Öğren</li>
+          <li>Aktif hatırla</li>
+          <li>Feynman ile anlat</li>
+          <li>Lab uygula</li>
+          <li>Rapor üret</li>
+          <li>Pipeline’a bağla</li>
+          <li>Aralıklı tekrar yap</li>
+        </ol>
+      </aside>
+    </section>
+  </header>
+
+  <main id="main">
+    <section class="section narrow" id="principles">
+      <div class="section-heading">
+        <p class="eyebrow">Güvenli sınırlar</p>
+        <h2>Bu programın kullanım çerçevesi</h2>
+      </div>
+      <div class="notice-grid">
+        <article class="notice safe">
+          <h3>İzinli ortamlar</h3>
+          <p>Kendi lokal laboratuvarın, kendi GitHub repoların, OWASP Juice Shop, DVWA, PortSwigger Web Security Academy, TryHackMe, Hack The Box Academy ve Docker tabanlı test ortamları.</p>
+        </article>
+        <article class="notice warning">
+          <h3>Yasak kapsam</h3>
+          <p>Yetkisiz sistemlere test, gerçek hedeflere izinsiz tarama, kimlik bilgisi çalma, zararlı yazılım geliştirme, güvenlik kontrollerini atlatma veya zarar verici eylemler yok.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="section-heading">
+        <p class="eyebrow">Alt beceriler</p>
+        <h2>DevSecOps beceri matrisi</h2>
+        <p>Her kart bir konu, pratik görev, pipeline aşaması ve tekrar zamanını içerir.</p>
+      </div>
+      <div class="toolbar">
+        <input id="skillSearch" type="search" placeholder="Beceri ara: Bandit, SARIF, DAST..." aria-label="Beceri ara" />
+        <select id="skillPhase" aria-label="Pipeline aşaması filtrele">
+          <option value="all">Tüm pipeline aşamaları</option>
+          <option value="Planlama">Planlama</option>
+          <option value="PR">PR</option>
+          <option value="Build">Build</option>
+          <option value="Test">Test</option>
+          <option value="Deploy">Deploy</option>
+          <option value="Raporlama">Raporlama</option>
+        </select>
+      </div>
+      <div class="card-grid" id="skillGrid"></div>
+    </section>
+
+    <section class="section" id="week-one">
+      <div class="section-heading">
+        <p class="eyebrow">Yoğun başlangıç</p>
+        <h2>İlk 7 gün</h2>
+        <p>Günde 60–120 dakika. Amaç: çalışan bir güvenlik pipeline’ı, JSON/SARIF çıktısı ve HTML raporu.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Gün</th>
+              <th>Konu</th>
+              <th>Hedef</th>
+              <th>Çalışma</th>
+              <th>Aktif hatırlama</th>
+              <th>Feynman görevi</th>
+              <th>Lab/pratik</th>
+              <th>Araç</th>
+              <th>Tekrar</th>
+              <th>Başarı ölçütü</th>
+              <th>Portföy çıktısı</th>
+            </tr>
+          </thead>
+          <tbody id="weekOneTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="roadmap">
+      <div class="section-heading">
+        <p class="eyebrow">90 günlük yol haritası</p>
+        <h2>Haftalık uygulama planı</h2>
+        <p>Her hafta sonunda GitHub’a eklenecek somut çıktı ve ölçülebilir başarı kriteri vardır.</p>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Dönem seçimi">
+        <button class="tab active" data-period="1">1–30. gün</button>
+        <button class="tab" data-period="2">31–60. gün</button>
+        <button class="tab" data-period="3">61–90. gün</button>
+      </div>
+      <div class="roadmap-grid" id="roadmapGrid"></div>
+    </section>
+
+    <section class="section split" id="commands">
+      <div>
+        <div class="section-heading align-left">
+          <p class="eyebrow">Başlangıç komutları</p>
+          <h2>Pratik araç örnekleri</h2>
+          <p>Bu komutları yalnızca kendi repolarında ve izinli lokal lab ortamlarında kullan.</p>
+        </div>
+        <div class="code-card">
+          <div class="code-title">Bandit JSON çıktısı</div>
+          <pre><code>pip install bandit
+bandit -r . -f json -o bandit-report.json</code></pre>
+        </div>
+        <div class="code-card">
+          <div class="code-title">Bandit SARIF çıktısı</div>
+          <pre><code>pip install bandit
+bandit -r . -f sarif -o bandit-results.sarif</code></pre>
+        </div>
+      </div>
+      <div class="code-card tall">
+        <div class="code-title">GitHub Actions: Bandit + SARIF upload</div>
+        <pre><code>name: security-scan
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  bandit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install bandit
+      - run: bandit -r . -f json -o bandit-report.json || true
+      - run: bandit -r . -f sarif -o bandit-results.sarif || true
+      - uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: bandit-results.sarif</code></pre>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-heading">
+        <p class="eyebrow">Portföy</p>
+        <h2>90 gün sonunda GitHub’da olması gereken projeler</h2>
+      </div>
+      <div class="project-list" id="projectList"></div>
+    </section>
+
+    <section class="section" id="templates">
+      <div class="section-heading">
+        <p class="eyebrow">Şablonlar</p>
+        <h2>Günlük ve haftalık takip</h2>
+      </div>
+      <div class="template-grid">
+        <article class="template">
+          <h3>Günlük çalışma şablonu</h3>
+          <ul>
+            <li>10 dk: Dün öğrendiğin 5 kavramı notsuz yaz.</li>
+            <li>20 dk: Tek konuyu sade tanım + örnekle öğren.</li>
+            <li>10 dk: 5 aktif hatırlama sorusuna cevap ver.</li>
+            <li>10 dk: Feynman açıklaması yaz.</li>
+            <li>30–60 dk: Lab uygula.</li>
+            <li>10–20 dk: Raporu Markdown/HTML/JSON/SARIF olarak kaydet.</li>
+            <li>5 dk: “Bugün ne öğrendim, neyi karıştırıyorum?” notu yaz.</li>
+          </ul>
+        </article>
+        <article class="template">
+          <h3>Haftalık değerlendirme formu</h3>
+          <ul>
+            <li>Konuları notsuz açıklayabiliyor muyum?</li>
+            <li>GitHub Actions workflow yazabiliyor muyum?</li>
+            <li>Bulguları risk seviyesine göre ayırabiliyor muyum?</li>
+            <li>JSON/SARIF/HTML rapor üretebiliyor muyum?</li>
+            <li>Pipeline fail/pass kararını gerekçelendirebiliyor muyum?</li>
+            <li>Portföye eklenebilir çıktı ürettim mi?</li>
+          </ul>
+        </article>
+        <article class="template">
+          <h3>Risk önceliklendirme modeli</h3>
+          <ul>
+            <li>Severity (önem): Low, Medium, High, Critical</li>
+            <li>Exploitability (sömürülebilirlik): düşük/orta/yüksek</li>
+            <li>Asset criticality (varlık kritiklik değeri): düşük/orta/yüksek</li>
+            <li>Remediation effort (düzeltme eforu): kolay/orta/zor</li>
+            <li>Blocking policy: High/Critical bulguda pipeline durur.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="exam">
+      <div class="section-heading">
+        <p class="eyebrow">Ölçme</p>
+        <h2>Haftalık mini sınavlar</h2>
+      </div>
+      <div class="exam-grid" id="examGrid"></div>
+    </section>
+
+    <section class="section split" id="interview">
+      <div>
+        <div class="section-heading align-left">
+          <p class="eyebrow">Mülakat</p>
+          <h2>Anlatılabilir proje açıklamaları</h2>
+        </div>
+        <div class="accordion" id="interviewAccordion"></div>
+      </div>
+      <aside class="mindset">
+        <h3>Zihinsel modeller</h3>
+        <ul>
+          <li>Shift-left security (güvenliği sola kaydırma)</li>
+          <li>Defense in depth (katmanlı savunma)</li>
+          <li>Risk-based prioritization (risk temelli önceliklendirme)</li>
+          <li>Fail fast, fail safe (erken ve güvenli başarısız ol)</li>
+          <li>Policy as Code (politikanın kodla uygulanması)</li>
+          <li>Least privilege (asgari ayrıcalık)</li>
+          <li>Evidence-driven security (kanıta dayalı güvenlik)</li>
+        </ul>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Bu site eğitim, savunma, yasal laboratuvar, güvenlik otomasyonu ve raporlama amacıyla hazırlanmıştır.</p>
+    <a href="#top">Yukarı dön</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

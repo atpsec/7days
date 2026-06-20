@@ -1,0 +1,18 @@
+{
+  "name": "devsecops-roadmap-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "90 günlük DevSecOps ve CI/CD güvenliği öğrenme yol haritası için statik web sitesi.",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "check": "python3 - <<'PY'\nfrom pathlib import Path\nfor file in ['index.html', 'styles.css', 'script.js']:\n    p = Path(file)\n    assert p.exists(), f'{file} bulunamadı'\n    assert p.stat().st_size > 0, f'{file} boş'\nprint('Statik site dosyaları hazır.')\nPY"
+  },
+  "keywords": [
+    "devsecops",
+    "github-actions",
+    "security",
+    "sast",
+    "dast",
+    "sarif"
+  ]
+}
