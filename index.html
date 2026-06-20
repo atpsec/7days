@@ -4,19 +4,22 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>90 Günlük DevSecOps ve CI/CD Güvenliği Yol Haritası</title>
-  <meta name="description" content="DevSecOps, GitHub Actions Security, SAST/DAST, Bandit, SARIF ve güvenlik raporlama odaklı 90 günlük uygulamalı eğitim yol haritası." />
+  <meta name="description" content="GitHub Actions Security, SAST/DAST, SARIF, Bandit, dependency scanning ve güvenlik raporlaması için 90 günlük uygulamalı DevSecOps öğrenme sistemi." />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">İçeriğe geç</a>
 
-  <header class="site-header">
+  <header class="topbar">
     <nav class="nav" aria-label="Ana menü">
-      <a class="brand" href="#top">
-        <span class="brand-mark">DS</span>
-        <span>DevSecOps Roadmap</span>
+      <a class="brand" href="#top" aria-label="DevSecOps Roadmap ana sayfa">
+        <span class="brand-mark" aria-hidden="true">DS</span>
+        <span class="brand-text">DevSecOps Roadmap</span>
       </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Menüyü aç/kapat">☰</button>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menüyü aç/kapat" aria-expanded="false" aria-controls="navLinks">
+        <span aria-hidden="true"></span>
+      </button>
       <div class="nav-links" id="navLinks">
         <a href="#skills">Beceriler</a>
         <a href="#week-one">7 Gün</a>
@@ -26,50 +29,61 @@
         <a href="#exam">Mini Sınavlar</a>
       </div>
     </nav>
-
-    <section id="top" class="hero">
-      <div class="hero-content">
-        <p class="eyebrow">Etik • Yasal • Savunma odaklı • Uygulamalı</p>
-        <h1>90 Günlük DevSecOps ve CI/CD Güvenliği Öğrenme Sistemi</h1>
-        <p class="hero-text">
-          GitHub Actions Security, CI/CD güvenliği, SAST (Statik Uygulama Güvenlik Testi),
-          DAST (Dinamik Uygulama Güvenlik Testi), Bandit, SARIF, dependency scanning
-          (bağımlılık taraması), secret scanning (gizli bilgi taraması), container security
-          (konteyner güvenliği) ve güvenlik raporlamasını uygulamalı öğrenmek için tasarlanmış
-          portföy odaklı yol haritası.
-        </p>
-        <div class="hero-actions">
-          <a class="button primary" href="#week-one">7 günlük başlangıca git</a>
-          <a class="button secondary" href="#roadmap">90 günlük plana git</a>
-        </div>
-      </div>
-      <aside class="hero-panel" aria-label="Öğrenme döngüsü">
-        <h2>Öğrenme Döngüsü</h2>
-        <ol class="cycle-list">
-          <li>Öğren</li>
-          <li>Aktif hatırla</li>
-          <li>Feynman ile anlat</li>
-          <li>Lab uygula</li>
-          <li>Rapor üret</li>
-          <li>Pipeline’a bağla</li>
-          <li>Aralıklı tekrar yap</li>
-        </ol>
-      </aside>
-    </section>
   </header>
 
   <main id="main">
-    <section class="section narrow" id="principles">
+    <section id="top" class="overview">
+      <div class="overview-copy">
+        <p class="eyebrow">Etik lablar • CI/CD güvenliği • Kanıt odaklı portföy</p>
+        <h1>90 günde DevSecOps pratiğini çalışan pipeline çıktısına dönüştür.</h1>
+        <p class="lead">
+          GitHub Actions Security, Bandit, SARIF, SAST/DAST, dependency scanning, secret scanning,
+          container security ve raporlama konularını ölçülebilir görevlerle ilerleten sade bir çalışma sistemi.
+        </p>
+        <div class="hero-actions" aria-label="Hızlı bağlantılar">
+          <a class="button primary" href="#week-one">7 günlük başlangıç</a>
+          <a class="button secondary" href="#skills">Beceri matrisini aç</a>
+        </div>
+      </div>
+
+      <div class="program-visual" aria-label="Program özeti görseli">
+        <img src="assets/roadmap-snapshot.png" alt="90 günlük DevSecOps yol haritası akış özeti" />
+      </div>
+
+      <div class="metric-strip" aria-label="Program metrikleri">
+        <article>
+          <span>13</span>
+          <p>Haftalık sprint</p>
+        </article>
+        <article>
+          <span>15</span>
+          <p>Alt beceri</p>
+        </article>
+        <article>
+          <span>12</span>
+          <p>Portföy projesi</p>
+        </article>
+        <article>
+          <span>6</span>
+          <p>Güvenlik kontrol ailesi</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section compact" id="principles">
       <div class="section-heading">
         <p class="eyebrow">Güvenli sınırlar</p>
-        <h2>Bu programın kullanım çerçevesi</h2>
+        <h2>Kapsam net, yöntem savunma odaklı.</h2>
+        <p>Program yalnızca izinli laboratuvarlar, kendi repoların ve eğitim ortamları için tasarlandı.</p>
       </div>
       <div class="notice-grid">
         <article class="notice safe">
+          <span class="notice-label">Uygun</span>
           <h3>İzinli ortamlar</h3>
           <p>Kendi lokal laboratuvarın, kendi GitHub repoların, OWASP Juice Shop, DVWA, PortSwigger Web Security Academy, TryHackMe, Hack The Box Academy ve Docker tabanlı test ortamları.</p>
         </article>
         <article class="notice warning">
+          <span class="notice-label">Sınır</span>
           <h3>Yasak kapsam</h3>
           <p>Yetkisiz sistemlere test, gerçek hedeflere izinsiz tarama, kimlik bilgisi çalma, zararlı yazılım geliştirme, güvenlik kontrollerini atlatma veya zarar verici eylemler yok.</p>
         </article>
@@ -82,17 +96,23 @@
         <h2>DevSecOps beceri matrisi</h2>
         <p>Her kart bir konu, pratik görev, pipeline aşaması ve tekrar zamanını içerir.</p>
       </div>
-      <div class="toolbar">
-        <input id="skillSearch" type="search" placeholder="Beceri ara: Bandit, SARIF, DAST..." aria-label="Beceri ara" />
-        <select id="skillPhase" aria-label="Pipeline aşaması filtrele">
-          <option value="all">Tüm pipeline aşamaları</option>
-          <option value="Planlama">Planlama</option>
-          <option value="PR">PR</option>
-          <option value="Build">Build</option>
-          <option value="Test">Test</option>
-          <option value="Deploy">Deploy</option>
-          <option value="Raporlama">Raporlama</option>
-        </select>
+      <div class="toolbar" aria-label="Beceri filtreleri">
+        <label>
+          <span>Beceri ara</span>
+          <input id="skillSearch" type="search" placeholder="Bandit, SARIF, DAST..." aria-label="Beceri ara" />
+        </label>
+        <label>
+          <span>Pipeline aşaması</span>
+          <select id="skillPhase" aria-label="Pipeline aşaması filtrele">
+            <option value="all">Tüm aşamalar</option>
+            <option value="Planlama">Planlama</option>
+            <option value="PR">PR</option>
+            <option value="Build">Build</option>
+            <option value="Test">Test</option>
+            <option value="Deploy">Deploy</option>
+            <option value="Raporlama">Raporlama</option>
+          </select>
+        </label>
       </div>
       <div class="card-grid" id="skillGrid"></div>
     </section>
@@ -101,7 +121,7 @@
       <div class="section-heading">
         <p class="eyebrow">Yoğun başlangıç</p>
         <h2>İlk 7 gün</h2>
-        <p>Günde 60–120 dakika. Amaç: çalışan bir güvenlik pipeline’ı, JSON/SARIF çıktısı ve HTML raporu.</p>
+        <p>Günde 60-120 dakika. Amaç: çalışan bir güvenlik pipeline'ı, JSON/SARIF çıktısı ve okunabilir rapor.</p>
       </div>
       <div class="table-wrap">
         <table>
@@ -129,12 +149,12 @@
       <div class="section-heading">
         <p class="eyebrow">90 günlük yol haritası</p>
         <h2>Haftalık uygulama planı</h2>
-        <p>Her hafta sonunda GitHub’a eklenecek somut çıktı ve ölçülebilir başarı kriteri vardır.</p>
+        <p>Her hafta sonunda GitHub'a eklenecek somut çıktı ve ölçülebilir başarı kriteri vardır.</p>
       </div>
       <div class="tabs" role="tablist" aria-label="Dönem seçimi">
-        <button class="tab active" data-period="1">1–30. gün</button>
-        <button class="tab" data-period="2">31–60. gün</button>
-        <button class="tab" data-period="3">61–90. gün</button>
+        <button class="tab active" type="button" data-period="1" role="tab" aria-selected="true">1-30. gün</button>
+        <button class="tab" type="button" data-period="2" role="tab" aria-selected="false">31-60. gün</button>
+        <button class="tab" type="button" data-period="3" role="tab" aria-selected="false">61-90. gün</button>
       </div>
       <div class="roadmap-grid" id="roadmapGrid"></div>
     </section>
@@ -190,7 +210,7 @@ jobs:
     <section class="section" id="projects">
       <div class="section-heading">
         <p class="eyebrow">Portföy</p>
-        <h2>90 gün sonunda GitHub’da olması gereken projeler</h2>
+        <h2>90 gün sonunda GitHub'da olması gereken projeler</h2>
       </div>
       <div class="project-list" id="projectList"></div>
     </section>
@@ -208,8 +228,8 @@ jobs:
             <li>20 dk: Tek konuyu sade tanım + örnekle öğren.</li>
             <li>10 dk: 5 aktif hatırlama sorusuna cevap ver.</li>
             <li>10 dk: Feynman açıklaması yaz.</li>
-            <li>30–60 dk: Lab uygula.</li>
-            <li>10–20 dk: Raporu Markdown/HTML/JSON/SARIF olarak kaydet.</li>
+            <li>30-60 dk: Lab uygula.</li>
+            <li>10-20 dk: Raporu Markdown/HTML/JSON/SARIF olarak kaydet.</li>
             <li>5 dk: “Bugün ne öğrendim, neyi karıştırıyorum?” notu yaz.</li>
           </ul>
         </article>
@@ -227,10 +247,10 @@ jobs:
         <article class="template">
           <h3>Risk önceliklendirme modeli</h3>
           <ul>
-            <li>Severity (önem): Low, Medium, High, Critical</li>
-            <li>Exploitability (sömürülebilirlik): düşük/orta/yüksek</li>
-            <li>Asset criticality (varlık kritiklik değeri): düşük/orta/yüksek</li>
-            <li>Remediation effort (düzeltme eforu): kolay/orta/zor</li>
+            <li>Severity: Low, Medium, High, Critical</li>
+            <li>Exploitability: düşük/orta/yüksek</li>
+            <li>Asset criticality: düşük/orta/yüksek</li>
+            <li>Remediation effort: kolay/orta/zor</li>
             <li>Blocking policy: High/Critical bulguda pipeline durur.</li>
           </ul>
         </article>
@@ -256,13 +276,13 @@ jobs:
       <aside class="mindset">
         <h3>Zihinsel modeller</h3>
         <ul>
-          <li>Shift-left security (güvenliği sola kaydırma)</li>
-          <li>Defense in depth (katmanlı savunma)</li>
-          <li>Risk-based prioritization (risk temelli önceliklendirme)</li>
-          <li>Fail fast, fail safe (erken ve güvenli başarısız ol)</li>
-          <li>Policy as Code (politikanın kodla uygulanması)</li>
-          <li>Least privilege (asgari ayrıcalık)</li>
-          <li>Evidence-driven security (kanıta dayalı güvenlik)</li>
+          <li>Shift-left security</li>
+          <li>Defense in depth</li>
+          <li>Risk-based prioritization</li>
+          <li>Fail fast, fail safe</li>
+          <li>Policy as Code</li>
+          <li>Least privilege</li>
+          <li>Evidence-driven security</li>
         </ul>
       </aside>
     </section>

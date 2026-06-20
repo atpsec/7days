@@ -345,6 +345,16 @@ function renderSkills() {
     return matchesText && matchesPhase;
   });
 
+  if (!filtered.length) {
+    skillGrid.innerHTML = `
+      <article class="skill-card">
+        <h3>Sonuç bulunamadı</h3>
+        <p>Aramayı sadeleştir veya pipeline aşaması filtresini değiştir.</p>
+      </article>
+    `;
+    return;
+  }
+
   skillGrid.innerHTML = filtered.map(item => `
     <article class="skill-card" data-phase="${item.phase}">
       <h3>${item.title}</h3>
@@ -423,14 +433,27 @@ function renderInterview() {
 
 document.querySelectorAll(".tab").forEach(tab => {
   tab.addEventListener("click", () => {
-    document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+    document.querySelectorAll(".tab").forEach(t => {
+      t.classList.remove("active");
+      t.setAttribute("aria-selected", "false");
+    });
     tab.classList.add("active");
+    tab.setAttribute("aria-selected", "true");
     renderRoadmap(tab.dataset.period);
   });
 });
 
 document.querySelector("#navToggle").addEventListener("click", () => {
-  document.querySelector("#navLinks").classList.toggle("open");
+  const navLinks = document.querySelector("#navLinks");
+  const isOpen = navLinks.classList.toggle("open");
+  document.querySelector("#navToggle").setAttribute("aria-expanded", String(isOpen));
+});
+
+document.querySelectorAll("#navLinks a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.querySelector("#navLinks").classList.remove("open");
+    document.querySelector("#navToggle").setAttribute("aria-expanded", "false");
+  });
 });
 
 skillSearch.addEventListener("input", renderSkills);

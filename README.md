@@ -1,12 +1,15 @@
 # DevSecOps Roadmap Website
 
-Bu klasör, 90 günlük DevSecOps ve CI/CD güvenliği öğrenme planını statik bir web sitesine dönüştürür.
+Bu repo, 90 günlük DevSecOps ve CI/CD güvenliği öğrenme planını statik bir web sitesine dönüştürür.
+
+Canlı site: https://atpsec.github.io/7days/
 
 ## Dosyalar
 
 - `index.html`: Ana sayfa
 - `styles.css`: Tasarım ve responsive görünüm
-- `script.js`: Arama, filtre, sekmeler ve akordeon davranışları
+- `script.js`: Arama, filtre, sekmeler, mobil menü ve akordeon davranışları
+- `assets/roadmap-snapshot.png`: İlk ekranda kullanılan yol haritası görseli
 
 ## Yerelde çalıştırma
 
@@ -24,12 +27,21 @@ Sonra tarayıcıda:
 http://localhost:8000
 ```
 
+## Kontrol
+
+```bash
+npm run check
+```
+
 ## GitHub Pages ile yayınlama
 
-1. Bu dosyaları bir GitHub reposuna yükle.
-2. Repository ayarlarında **Settings > Pages** bölümüne gir.
-3. Source olarak `main` branch ve `/root` klasörünü seç.
-4. Yayın linki oluşunca README içine ekle.
+Bu repo GitHub Actions tabanlı Pages deploy kullanır. Ayar:
+
+```text
+Settings -> Pages -> Build and deployment -> Source: GitHub Actions
+```
+
+`main` branch'e push sonrası `.github/workflows/deploy-pages.yml` workflow'u siteyi yayınlar.
 
 ## Kapsam
 
